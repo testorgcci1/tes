@@ -1,0 +1,9 @@
+on:
+  pull_request:
+    branches: [main]
+    types: [unlabeled]
+jobs:
+  checkhceckjob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo fake-checkcheckjob
