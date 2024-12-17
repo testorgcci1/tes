@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
         # with:
         #   ref: ${{ github.event.pull_request.head.sha }}
-      - run: echo mailciouscode > mallory.txt
+      - run: echo mailciouscode > testfile
       - uses: planetscale/ghcommit-action@v0.2.0
         with:
           commit_message: "🤖 fmt"
