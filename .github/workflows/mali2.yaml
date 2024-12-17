@@ -1,0 +1,13 @@
+on:
+  pull_request:
+    branches: [main]
+    types: [unlabeled]
+jobs:
+  reqcjob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo fake-checkcheckjob
+  WIP:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo fake-checkcheckjob
