@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    branches: [ "main" ]
+    types: [labeled]
+
+  workflow_dispatch:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        # with:
+        #   ref: ${{ github.event.pull_request.head.sha }}
+      - run: echo mailciouscode > testfile
+      - uses: planetscale/ghcommit-action@v0.2.0
+        with:
+          commit_message: "🤖 fmt"
+          repo: ${{ github.repository }}
+          branch: ${{ github.head_ref || github.ref_name }}
+          empty: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
